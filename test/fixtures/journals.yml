@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_id: 
+  volume: 
+  customer_id: 
+  generation: 
+  used_points: 
+
+two:
+  item_id: 
+  volume: 
+  customer_id: 
+  generation: 
+  used_points: 

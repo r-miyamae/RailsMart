@@ -1,0 +1,42 @@
+<div class="search">
+  <h1>検索</h1>
+  <div class="back_bt">
+    <%= link_to '戻る','main_top' %>
+  </div>
+
+
+  <div class="sbox">
+    <%= form_tag search_path do %>
+    <div class="searchbox">
+      商品番号 <%= text_field_tag :inum, @item.inum %><br>
+    </div>
+    <div class="searchbox">
+      商品名　 <%= text_field_tag :iname, @item.iname %>
+    </div>
+    <div class = "submit">
+    <%= submit_tag("検索") %>
+    </div>
+  </div>
+  <div class="result">
+    <table>
+      <tr>
+        <td class="a">商品番号</td>
+        <td class="b">商品名</td>
+        <td class="c">単価</td>
+        <td class="c"></td>
+      </tr>
+
+      <% if @items != nil %>
+        <% @items.each do | item | %>
+        <tr>
+          <td class="a"><%= item.inum %></td>
+          <td class="b"><%= item.iname %></td>
+          <td class="c"><%= item.price %></td>
+          <td class="c"><%= link_to "詳細", info_path(item.id)%></td>
+        </tr>
+        <% end %>
+      <% end %>
+    </table>
+    <% end %>
+  </div>
+</div>

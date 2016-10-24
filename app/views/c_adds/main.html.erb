@@ -1,0 +1,35 @@
+<div class="back_bt">
+  <%= link_to '戻る','main_top' %>
+</div>
+<h1>登録</h1>
+
+
+<div class="errormessage">
+  <div id = "notice">
+  <%= notice %>
+  </div>
+  <% if @user.errors.any? %>
+  <h2><%= @user.errors.count %>件のエラーがあります。 </h2>
+
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+  <% end %>
+</div>
+
+
+
+
+
+<%= form_tag cadd_path do %>
+<div class="add_user">
+  会員番号(6桁) <%= text_field_tag :cnum, @user.cnum %><br>
+  　　　 会員名 <%= text_field_tag :cname, @user.cname %><br>
+</div>
+  <div class = "submit">
+    <%= submit_tag("登録") %>
+  </div>
+  <% end %>
+</div>

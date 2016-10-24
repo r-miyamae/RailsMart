@@ -1,0 +1,88 @@
+<script type="text/javascript" src="./../../assets/info.js"></script>
+
+
+<div class ="name"><%= @item.iname %></div>
+<div class ="itemprice">価格：<%= @item.price %>円</div>
+<br><br>
+<table class="infotable">
+  <tr>
+    <td class="data1">時刻</td><td class="data2">会員番号</td><td class="data3">客層</td>
+  </tr>
+</table>
+<div class="tabledata">
+<table class="tdata">
+<% @journal.each do |info| %>
+
+  <tr>
+    <td class="data1"><%= info.created_at %></td>
+    <td class="data2"><%= info.customer_id%></td>
+
+    <% case info.generation %>
+      <% when 1 %>
+      <td class = "data3">〜19 男性</td>
+      <% when 2 %>
+        <td class = "data3">20代 男性</td>
+      <% when 3 %>
+        <td class = "data3">30代 男性</td>
+      <% when 4 %>
+        <td class = "data3">40代 男性</td>
+      <% when 5 %>
+        <td class = "data3">50〜 男性</td>
+      <% when 6 %>
+        <td class = "data3">〜19 女性</td>
+      <% when 7 %>
+        <td class = "data3">20代 女性</td>
+      <% when 8 %>
+        <td class = "data3">30代 女性</td>
+      <% when 9 %>
+        <td class = "data3">40代 女性</td>
+      <% when 10 %>
+        <td class = "data3">50〜 女性</td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+
+</div>
+
+
+<div class ="analysis">
+
+  <% cnt = 1 %>
+  <% @array.each do |general| %>
+
+    <% if general != 0 %>
+      <% case cnt %>
+        <% when 1 %>
+          〜19 男性
+        <% when 2 %>
+          20代 男性
+        <% when 3 %>
+          30代 男性
+        <% when 4 %>
+          40代 男性
+        <% when 5 %>
+          50〜 男性
+        <% when 6 %>
+          〜19 女性
+        <% when 7 %>
+          20代 女性
+        <% when 8 %>
+          30代 女性
+        <% when 9 %>
+          40代 女性
+        <% when 10 %>
+          50〜 女性
+      <% end %>
+      の購入率は<%= (general * 100 / @cnt) %>%
+      <br>
+    <% end %>
+    <% cnt += 1 %>
+  <% end %>
+</div>
+
+<div class="back_bt">
+  <%= link_to '戻る',search_main_path %>
+</div>
+
+<!-- <%= high_chart('購入客層',@graph)%> -->

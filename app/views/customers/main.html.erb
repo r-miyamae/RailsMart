@@ -1,0 +1,36 @@
+<div class="search">
+  <h1>検索</h1>
+  <div class="back_bt">
+  <%= link_to '戻る','main_top',class:'' %>
+  </div>
+
+  <div class="sbox">
+    <div class="searchbox">
+      <%= form_tag csearch_path do %>
+      <div class="s_box">会員番号 <%= text_field_tag :cnum, @user.cnum %><br></div>
+      <div class="s_box">　会員名 <%= text_field_tag :cname, @user.cname %></div>
+    <div class = "submit">
+      <%= submit_tag("検索") %>
+    </div>
+  </div>
+  <div class="scrollbox">
+    <table>
+      <tr>
+        <td class="a">会員番号</td>
+        <td class="b">会員名</td>
+        <td class="c">ポイント</td>
+      </tr>
+      <% if @users != nil %>
+      <% @users.each do | user | %>
+      <tr>
+        <td class="a"><%= user.cnum %></td>
+        <td class="b"><%= user.cname %></td>
+        <td class="c"><%= user.points %></td>
+      </tr>
+      <% end %>
+      <% end %>
+    </table>
+    <% end %>
+    </div>
+  </div>
+</div>

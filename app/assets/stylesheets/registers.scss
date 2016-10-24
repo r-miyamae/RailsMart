@@ -1,0 +1,238 @@
+.registers{
+  background-color: #F8F8FF;
+
+.journal tr td{
+  border-top: 1px solid black;
+}
+.tablelabel{
+  margin: 15px auto auto 15px;
+  float: left;
+
+  height: 18px;
+  background-color: #cccccc;
+  border:1px solid #999999;
+}
+.tables{
+  margin: 15px auto auto 15px;
+  float: left;
+  overflow: auto;
+  height: 265px;
+  background-color: #cccccc;
+  border:1px solid #999999;
+}
+.journal tr td span{
+  font-size: 20px;
+}
+.item,.cnt,.price,.del{
+  padding: 4px;
+  font-size: 20px;
+  height: 22px;
+  background-color: #EEA057;
+}
+.cnt{
+  width: 50px;
+  text-align: right;
+}
+.del{
+  width: 40px;
+  color: red;
+}
+.item{
+  width: 615px;
+}
+.back_bt{
+  float: right;
+  width: 80px;
+  text-align: center;
+  font-size: 40px;
+  border: solid 2px;
+  border-radius: 5px;
+  background-color: #32CCB6;
+  box-shadow: 2px 2px black;
+  position: absolute;
+  top:5px;
+  right: 10px;
+  z-index: 2;
+  }
+.back_bt:hover{
+  box-shadow: 1px 1px black;
+}
+.back_bt a{
+  text-decoration: none;
+  display: block;
+  color: black;
+}
+.up_switch{
+  clear: both;
+  margin-top: 15px;
+  margin-left: 30px;
+}
+
+.down_switch{
+  margin-top: 40px;
+  margin-left: 30px;
+}
+.customer_info{
+  float: left;
+  margin: 8px auto auto 15px;
+  border: 2px solid black;
+  padding-left: 5px;
+  font-size:15px;
+  width: 500px;
+  height: 180px;
+  background-color: #f5f5f5;
+}
+
+.user_num{
+  margin-top: 5px;
+  width: 400px;
+  height: 30px;
+  border: 1px solid black;
+  margin-bottom: 5px;
+}
+.user_num span{
+  font-size: 30px;
+}
+.user_points{
+  margin-top: 5px;
+  width: 400px;
+  height: 30px;
+  border: 1px solid black;
+}
+.user_points span{
+  font-size: 30px;
+}
+.cost{
+  float: left;
+  padding: 5px;
+  font-size: 23px;
+  margin: 0px auto auto 15px;
+}
+.cost tr th{
+    border: 1px solid black;
+    width: 170px;
+    background-color: #f0ffff;
+    font-weight: 100;
+}
+.cost tr td{
+  border: 1px solid black;
+  width: 387px;
+  background-color: #f5f5f5;
+  text-align:right;
+}
+.tsub{
+  height: 8px;
+}
+.tsub span{
+  font-size: 23px;
+}
+.tred{
+  height: 25px;
+}
+.tred span{
+  color: red;
+  font-size: 23px;
+}
+.tdis{
+  height: 40px;
+}
+.tdis span{
+  font-size: 40px;
+  color: #0000cc;
+}
+.trec{
+  height: 40px;
+}
+.trec span{
+  font-size: 40px;
+}
+.tcha{
+  height:27px;
+  font-weight: 100;
+}
+.tcha span{
+  font-size: 33px;
+}
+.price{
+  width: 350px;
+  text-align: right;
+}
+.hotters{
+  clear: both;
+  margin: 10px 0px 0px 0px;
+  height: 50px;
+  width: 1090px;
+  padding-left: 20px;
+}
+.content{
+  margin-top: 0px;
+  padding-left: 15px;
+}
+.content tr td{
+  font-size: 50px;
+}
+.hotters li{
+  font-size: 40px;
+  width: 358px;
+  display: block;
+  float: left;
+  color: #003200;
+  background-color:#30d2BA;
+  border: 3px #2e8b57 outset;
+  text-align: center;
+}
+.hotters li.current{
+  background-color: #00fa9a;
+  border: 2px #2e8b57 inset;
+  margin-top: 1px;
+}
+.icodebox{
+  width: 100px;
+  font-size: 12px;
+  height: 50px;
+  border: 2px solid black;
+  position: absolute;
+  right: 5px;
+  top:100px;
+  background-color: white;
+}
+.itemcodebox{
+  width: 94px;
+  height:25px;
+  margin-top: 6px;
+  border: 1px solid black;
+  margin-left: 2px;
+  font-size: 10px;
+}
+#i_code{
+  font-size: 23px;
+}
+.hide{
+  display: none;
+}
+.content li{
+  list-style-type: none;
+}
+.content li table tr td{
+  background-color: #bbfcbb;
+  border: 2px solid #666666;
+  height: 70px;
+  width: 358px;
+  font-size: 30px;
+}
+
+.in_date,.in_date input{
+  border: 1px solid #F9F0d9;
+  box-decoration:none;
+  width: 1px;
+  height: 1px;
+  background-color: #F9F0D9;
+  position: absolute;
+  top:13px;
+  right: 30px;
+}
+#gene,#redu{
+  color: black;
+  font-size: 20px;
+}
+}

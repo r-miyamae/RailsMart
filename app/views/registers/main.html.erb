@@ -1,0 +1,155 @@
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="./../../assets/register.js"></script>
+<script>
+//= require jquery
+//= require jquery_ujs
+</script>
+
+<div class="tables">
+  <table class="journal">
+    <tr class="content0">
+      <td class="del"><span id="d0"></span></td>
+      <td class="item"><span id="i0">商品名</span></td>
+      <td class="cnt"><span id="c0">数量</span></td>
+      <td class="price"><span id="p0">金額</span></td>
+    </tr>
+
+
+
+
+
+
+  </table>
+</div>
+<div class="customer_info">
+  <h2>会員情報</h2>
+  <a>会員番号</a>
+  <div class="user_num">
+    <span id=u_num></span>
+  </div>
+
+  <a>ご利用可能ポイント</a>
+  <div class="user_points">
+    <span id=u_poin></span>
+  </div>
+
+</div>
+<table class="cost" id="icost">
+  <tr>
+    <th class="tsub">小計</th>
+    <td class="tsub"><span id="subtota"></span></td>
+  </tr>
+  <tr>
+    <th class="tred">値引き</th>
+    <td class="tred" id="tred1"><span id="reduc"></span></td>
+  </tr>
+  <tr>
+    <th class="tdis">お支払金額</th>
+    <td class="tdis"><span id="discoun"></span></td>
+  </tr>
+  <tr>
+    <th class="trec">預かり</th>
+    <td class="trec"><span id="receiv"></span></td>
+  </tr>
+  <tr>
+    <th class="tcha">お釣り</th>
+    <td class="tcha"><span id="chang"></span></td>
+  </tr>
+</table>
+<div class="back_bt">
+  <%= link_to '戻る',main_top_path,class:'' %>
+</div>
+
+<ul class="hotters">
+  <li class="current">FF</li>
+  <li>肉まん</li>
+  <li>おでん</li>
+</ul>
+<ul class = "content">
+  <li>
+    <table class="tab">
+      <tr>
+        <td class="hot" value="9101"><%= image_tag 'chicken.png' %>骨付きチキン</td>
+        <td class="hot" value="9102"><%= image_tag "amedog.png" %>アメリカンドッグ</td>
+        <td class="hot" value="9103"><%= image_tag "pan.png" %>揚げパン</td>
+      </tr>
+      <tr>
+        <td class="hot" value="9104"><%= image_tag "karaage.png" %>唐揚げ</td>
+        <td class="hot" value="9105"><%= image_tag "poteto.png" %>ポテト</td>
+        <td class="hot" value="9106"><%= image_tag "takoyaki.png" %>たこ焼き</td>
+      </tr>
+      <tr>
+        <td class="hot" value="9107"><%= image_tag "pura.png" %>天ぷら</td>
+      </tr>
+    </table>
+  </li>
+  <li class="hide">
+    <table>
+      <tr>
+        <td class="hot" value="9201"><%= image_tag "man.png" %>肉まん</td>
+        <td class="hot" value="9202"><%= image_tag "nikuman.png" %>ハーフ肉まん</td>
+        <td class="hot" value="9203"><%= image_tag "man6.png" %>カレーまん</td>
+      </tr>
+      <tr>
+        <td class="hot" value="9204"><%= image_tag "man2.png" %>P肉まん</td>
+        <td class="hot" value="9205"><%= image_tag "man5.png" %>ピザまん</td>
+        <td class="hot" value="9206"><%= image_tag "man7.png" %>あんまん</td>
+      </tr>
+      <tr>
+        <td class="hot" value="9207"><%= image_tag "man3.png" %>角煮まん</td>
+        <td class="hot" value="9208"><%= image_tag "syumai.png" %>しうまい</td>
+      </tr>
+    </table>
+  </li>
+  <li class="hide">
+    <table>
+      <tr>
+        <td class="hot" value="9301"><%= image_tag "daikon.png" %>大根</td>
+        <td class="hot" value="9302"><%= image_tag "tamago.png" %>玉子</td>
+        <td class="hot" value="9303"><%= image_tag "konnyaku.png" %>三角蒟蒻</td>
+      </tr>
+      <tr>
+        <td class="hot" value="9304"><%= image_tag "tikuwa.png" %>竹輪</td>
+        <td class="hot" value="9305"><%= image_tag "hanpen.png" %>はんぺん</td>
+        <td class="hot" value="9306"><%= image_tag "motikin.png" %>餅巾着</td>
+      </tr>
+      <tr>
+        <td class="hot" value="9307"><%= image_tag "konbu.png" %>昆布</td>
+        <td class="hot" value="9308"><%= image_tag "age.png" %>さつま揚げ</td>
+        <td class="hot" value="9309"><%= image_tag "tako.png" %>タコ足</td>
+      </tr>
+    </table>
+  </li>
+</ul>
+<div class="icodebox">
+  <a>商品番号スキャン</a>
+  <div class="itemcodebox">
+    <span id="i_code"></span>
+  </div>
+</div>
+
+<div class="in_date">
+<%= form_tag cfind_registers_path do %>
+  <%= text_field_tag  :cnum  %>
+  <%= submit_tag "",id: "csubmit" %>
+<% end %>
+
+
+<%= form_tag commit_registers_path do %>
+  <%= text_field_tag :gene %>
+  <%= text_field_tag :redu %>
+  <%= text_field_tag :customer_num %>
+  <%= submit_tag "",id: "set" %>
+<% end %>
+<%= form_tag ifind_registers_path do %>
+  <%= text_field_tag :inum %>
+  <%= text_field_tag :deletejudge %>
+  <%= submit_tag "",id: "isubmit" %>
+<% end %>
+</div>
+
+
+
+
+<!-- <p><input type="text" data-bind="value: gon.inum, valueUpdate: 'afterkeydown'"></p>
+<p id="result" data-bind="text: gon.inum">ここに入力されたテキストと同じものが入る</p> -->

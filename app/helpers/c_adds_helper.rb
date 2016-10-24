@@ -1,0 +1,2 @@
+module CAddsHelper
+end

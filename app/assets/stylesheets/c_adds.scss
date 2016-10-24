@@ -1,0 +1,69 @@
+.c_adds{
+  background-color: #F9F0D9;
+
+h1{
+  font-size: 40px;
+}
+.back_bt{
+  float: right;
+  width: 80px;
+  text-align: center;
+  font-size: 40px;
+  border: solid 2px;
+  border-radius: 5px;
+  background-color: #32CCB6;
+  box-shadow: 2px 2px black;
+  position: absolute;
+  top:5px;
+  right: 10px;
+  }
+  .back_bt:hover{
+    box-shadow: 1px 1px black;
+  }
+  .back_bt a{
+    text-decoration: none;
+    display: block;
+    color: black;
+  }
+  .add_user{
+    clear: both;
+    width: 500px;
+    padding-top: 150px;
+    padding-left: 400px;
+    margin-left: 39px;
+    position: absolute;
+    top:300px;
+  }
+  #notice{
+    margin-left: 80px;
+    font-size: 30px;
+  }
+  .errormessage{
+    background-color: #ffcccc;
+    width: 440px;
+    padding-left: 30px;
+    margin-top: 190px;
+    margin-left: 425px;
+  }
+  .errormessage h2{
+    font-size: 40px;
+    color: red;
+  }
+  .errormessage ul{
+    margin-left: 10px;
+  }
+  .errormessage ul li{
+    font-size: 23px;
+  }
+
+  .submit{
+    margin-left: 546px;
+    position: absolute;
+    top: 580px;
+  }
+input{
+  margin-top: 10px;
+  height: 35px;
+  width: 250px;
+}
+}
