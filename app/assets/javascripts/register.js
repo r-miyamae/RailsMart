@@ -15,10 +15,10 @@ var ghugo = 0;//利用可能ポイント用
 var deljudge = 0;//指定取消判定
 var reinum = 0;//リピートする商品番号を格納
 var len = 0;
-var miyamae=1;
-//キーコード//////リ/入力/ク・・/万・・/ポ・/取消/男・・・・・・・・・・・・・・・・・/女・・・・・・・・・・・・・・・・・・・・/中止/ス/値引き
-var keyline = [76,13,107,110,109,111,73,79,80,219,221,77,188,190,191,220,106,186,75];
-
+var miyamae=1;//客層ボタン連打対策
+//キーコード//////リ/入力/ク・/万・/ポ/取消/男・・・・・・・・・・・・・・・・・/女・・・・・・・・・・・・・・・・・・・・/中止/ス/値引き
+var keyline = [82,79,46,77,80,84,73,79,80,219,221,77,188,190,191,220,106,83,78];
+var num_key = [48,57];
 document.onkeydown = keypush;
 
 //金額を区切る関数
@@ -90,6 +90,7 @@ function keypush(){
     var repeat=0;//リピートの判定用（ボタン押毎に初期化）
     var generation= 0 ; //客層ボタン判定
     var keynum=parseInt(event.keyCode);
+    console.log(keynum);
     for(var i=0;i<19;i++){
       if(keynum==keyline[i]){
         break;
@@ -98,19 +99,19 @@ function keypush(){
     //-------------------------------------バーコードスキャン--------------------
     if(i!=1){   //入力ボタンを押した時実行されないように
       if(itemjudge||userjudge||reducejudge){
-        if(keynum >= 96 && keynum <= 105){
+        if(keynum >= num_key[0] && keynum <= num_key[1]){
           if(itemjudge){//商品番号入力
-            itemcode=itemcode*10+(keynum-96);
+            itemcode=itemcode*10+(keynum-num_key[0]);
             if(itemcode>=10000)itemcode=9999;
             document.getElementById("i_code").textContent=itemcode;
             document.getElementById("inum").value=itemcode;
           }else if(userjudge){//会員番号入力
-            usernum=usernum*10+(keynum-96);
+            usernum=usernum*10+(keynum-num_key[0]);
             if(usernum>=1000000)usernum=999999;
             document.getElementById("u_num").textContent=usernum;
             document.getElementById("cnum").value=usernum;
           }else if(reducejudge){//ポイント使用金額入力
-            reduce=reduce*10-(keynum-96);
+            reduce=reduce*10-(keynum-num_key[0]);
             if(-reduce>ghugo)
               reduce=-ghugo;
             if(-reduce>subtotal)
@@ -119,10 +120,10 @@ function keypush(){
           }
         }
       }
-      else if(keynum >= 96 && keynum <= 105 || i== 3){    //-----預り金入力--------
-        // 96-105
+      else if(keynum >= num_key[0] && keynum <= num_key[1] || i== 3){    //-----預り金入力--------
+        // num_key[0]-num_key[1]
         if(i != 3){   //数字ボタン
-          keep1=keep1*10+(keynum-96);
+          keep1=keep1*10+(keynum-num_key[0]);
         }else{      //万券ボタン
           if(keep1 == 0){
             keep1=1;
